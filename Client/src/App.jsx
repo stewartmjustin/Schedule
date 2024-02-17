@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react"
 import Login from "./Login"
+import Viewer from "./Viewer"
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
       )}
       <button onClick={console.log(eventData)}>log</button>
       <Login />
+      <Viewer />
     </>
   )
 }

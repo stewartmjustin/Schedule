@@ -23,7 +23,7 @@ export async function getEvents() {
 
 export async function getEvent(ID) {
   const [rows] = await pool.query('SELECT * FROM events WHERE ID = ?', [ID])
-  return rows
+  return rows[0]
 }
 
 export async function createEvent(Name) {
@@ -32,7 +32,13 @@ export async function createEvent(Name) {
   return getEvent(id)
 }
 
+export async function getWeeks(X, Y) {
+  const [rows] = await pool.query('SELECT * FROM events WHERE day < (?) AND day > (?)', [X, Y])
+  return rows
+}
+
 /*const events = await getEvents()*/
 /*const events = await getEvent(1)*/
 /*const events = await createEvent("test3")*/
+/*const events = await getWeeks('2024-03-01', '2024-02-17')*/
 /*console.log(events)*/
