@@ -13,15 +13,15 @@ function getCurDate() {
 }
 
 function getSunDate() {
-    date = getCurDate();
-    date.setDate(date.getDate - date.getDay)
+    const date = getCurDate();
+    date.setDate(date.getDate() - date.getDay())
     return date
 }
 
 function getFutureDate(oldDate, Y) {
     const fDate = new Date(oldDate)
-    fDate.setDate(fDate.getDate + Y * 7)
-    fDate.setDate(fDate.getDate + (7 - fDate.getDay))
+    fDate.setDate(fDate.getDate() + Y * 7)
+    fDate.setDate(fDate.getDate() + (7 - fDate.getDay()))
     return fDate
 }
 
@@ -46,9 +46,9 @@ app.post("/events", async (req, res) => {
 
 app.get("/events/weeks/:Y", async (req, res) => {
     const y = req.params.Y
-    date = getSunDate()
-    futureDate = getFutureDate(date, y)
-    const events = await getWeeks(date, futureDate)
+    const date = getSunDate()
+    const futureDate = getFutureDate(date, y)
+    const events = await getWeeks(futureDate, date)
     res.send(events)
 })
 

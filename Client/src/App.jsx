@@ -21,7 +21,7 @@ function App() {
   }, [])
   return (
     <>
-      <button onClick={() => {getEvents()}}>Get Events!</button>
+      {/*<button onClick={() => {getEvents()}}>Get Events!</button>
       {(typeof eventData === 'undefined') ? (
         <h1>Undefined</h1>
       ): (
@@ -30,7 +30,7 @@ function App() {
         ))
       )}
       <button onClick={console.log(eventData)}>log</button>
-      <Login />
+      <Login />*/}
       <Viewer />
     </>
   )
