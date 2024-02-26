@@ -20,17 +20,16 @@ function Viewer() {
     return ( 
         <>
             <h1>Viewer</h1>
+                <label htmlFor="weeksNumber">See Events for how many weeks ahead?</label>
+                <input type="number" id="weeksNumber" defaultValue={2}></input>
+                <button type="button" onClick={() => {getNextWeeks(document.getElementById('weeksNumber').value)}}>Submit</button>
             {(typeof weeksData === 'undefined') ? (
                 <h1>No Events Found</h1>
             ): (
-                /*weeksData.map((obj, i) => (
-                    <p key={i}>{"Event ID: " + obj.ID + "\t\tEvent Name: " + obj.Name + "\t\tEvent Date: " + obj.day}</p>
-                ))*/
                 weeksData.map((obj, i) => (
                     <Event key={i} ID={obj.ID} Name={obj.Name} Day={obj.day} />
                 ))
             )}
-            {/*<Event ID="1" Name="Name" Day="Day"/>*/}
         </>
     )
 }
