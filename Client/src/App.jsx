@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react"
-import Login from "./Login"
 import Viewer from "./Viewer"
+import Creator from "./Creator"
 
 function App() {
 
@@ -21,17 +21,8 @@ function App() {
   }, [])
   return (
     <>
-      {/*<button onClick={() => {getEvents()}}>Get Events!</button>
-      {(typeof eventData === 'undefined') ? (
-        <h1>Undefined</h1>
-      ): (
-        eventData.map((obj, i) => (
-          <p key={i}>{"Event ID: " + obj.ID + "\t\tEvent Name: " + obj.Name}</p>
-        ))
-      )}
-      <button onClick={console.log(eventData)}>log</button>
-      <Login />*/}
       <Viewer />
+      <Creator />
     </>
   )
 }

@@ -26,8 +26,8 @@ export async function getEvent(ID) {
   return rows[0]
 }
 
-export async function createEvent(Name) {
-  const [result] = await pool.query('INSERT INTO events (Name) VALUES (?)', [Name])
+export async function createEvent(Name, day) {
+  const [result] = await pool.query('INSERT INTO events (Name, day) VALUES (?, ?)', [Name, day])
   const id = result.insertId
   return getEvent(id)
 }
