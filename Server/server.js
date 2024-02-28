@@ -44,6 +44,10 @@ app.post("/events", async (req, res) => {
     res.status(201).send(note)
 })
 
+app.post("/delEvents", async (req, res) => {
+    /*Delete!*/
+})
+
 app.get("/events/weeks/:Y", async (req, res) => {
     const y = req.params.Y
     const date = getSunDate()

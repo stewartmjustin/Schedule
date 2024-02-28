@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react"
 import Viewer from "./Viewer"
 import Creator from "./Creator"
+import Delete from "./Delete"
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
     <>
       <Viewer />
       <Creator />
+      <Delete />
     </>
   )
 }
