@@ -37,8 +37,14 @@ export async function getWeeks(X, Y) {
   return rows
 }
 
+export async function delEventID(ID) {
+  const [rows] = await pool.query('DELETE FROM events WHERE ID=(?)', [ID])
+  return rows.affectedRows
+}
+
 /*const events = await getEvents()*/
 /*const events = await getEvent(1)*/
 /*const events = await createEvent("test3")*/
 /*const events = await getWeeks('2024-03-01', '2024-02-17')*/
+/*const events = await delEventID(9)*/
 /*console.log(events)*/

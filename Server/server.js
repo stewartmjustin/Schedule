@@ -1,5 +1,5 @@
 import express from "express"
-import { getEvents, getEvent, createEvent, getWeeks } from "./database.js";
+import { getEvents, getEvent, createEvent, getWeeks, delEventID } from "./database.js";
 import cors from 'cors'
 
 const app = express();
@@ -44,8 +44,11 @@ app.post("/events", async (req, res) => {
     res.status(201).send(note)
 })
 
-app.post("/delEvents", async (req, res) => {
+app.post("/delEvents/:id", async (req, res) => {
     /*Delete!*/
+    const id = req.params.id
+    const note = await delEventID(id)
+    res.status(201).send("Rows Affected: " + note)
 })
 
 app.get("/events/weeks/:Y", async (req, res) => {
