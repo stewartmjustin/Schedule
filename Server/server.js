@@ -44,11 +44,10 @@ app.post("/events", async (req, res) => {
     res.status(201).send(note)
 })
 
-app.post("/delEvents/:id", async (req, res) => {
-    /*Delete!*/
+app.delete("/delEvents/:id", async (req, res) => {
     const id = req.params.id
     const note = await delEventID(id)
-    res.status(201).send("Rows Affected: " + note)
+    res.status(201).send(note)
 })
 
 app.get("/events/weeks/:Y", async (req, res) => {

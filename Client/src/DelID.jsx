@@ -1,9 +1,12 @@
 function DelID() {
     function deleteFetch(X) {
-        /*fetch("http://localhost:3000/delEvents/" + X).then(
-            alert(response)
-        )*/
-        alert("Nothing for now! ID: " + X)
+        fetch("http://localhost:3000/delEvents/" + X, {
+            method: 'DELETE',
+        }).then(
+            response => response.json()
+        ).then(
+            response => console.log(response)
+        )
     }
     return (
         <>
