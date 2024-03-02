@@ -27,8 +27,6 @@ function getFutureDate(oldDate, Y) {
 
 app.get("/events", async (req, res) => {
     const events = await getEvents()
-    //console.log(events)
-    //res.json({"events": events})
     res.send(events)
 })
 
@@ -39,9 +37,6 @@ app.get("/events/:id", async (req, res) => {
 })
 
 app.post("/events", async (req, res) => {
-    /*const { Name } = req.body
-    const note = await createEvent(Name)
-    res.status(201).send(note)*/
     const Name = req.body.Name
     const day = req.body.day
     const note = await createEvent(Name, day)
