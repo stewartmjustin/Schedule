@@ -39,9 +39,13 @@ app.get("/events/:id", async (req, res) => {
 })
 
 app.post("/events", async (req, res) => {
-    const { Name } = req.body
+    /*const { Name } = req.body
     const note = await createEvent(Name)
-    res.status(201).send(note)
+    res.status(201).send(note)*/
+    const Name = req.body.Name
+    const day = req.body.day
+    const note = await createEvent(Name, day)
+    res.send(note)
 })
 
 app.delete("/delEvents/:id", async (req, res) => {
