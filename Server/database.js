@@ -42,6 +42,11 @@ export async function delEventID(ID) {
   return rows
 }
 
+export async function delEventName(Name) {
+  const [rows] = await pool.query('DELETE FROM events WHERE Name=(?)', [Name])
+  return rows
+}
+
 /*const events = await getEvents()*/
 /*const events = await getEvent(1)*/
 /*const events = await createEvent("test3")*/

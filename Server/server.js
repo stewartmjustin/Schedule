@@ -1,5 +1,5 @@
 import express from "express"
-import { getEvents, getEvent, createEvent, getWeeks, delEventID } from "./database.js";
+import { getEvents, getEvent, createEvent, getWeeks, delEventID, delEventName } from "./database.js";
 import cors from 'cors'
 
 const app = express();
@@ -43,9 +43,15 @@ app.post("/events", async (req, res) => {
     res.send(note)
 })
 
-app.delete("/delEvents/:id", async (req, res) => {
+app.delete("/delEvents/id/:id", async (req, res) => {
     const id = req.params.id
     const note = await delEventID(id)
+    res.status(201).send(note)
+})
+
+app.delete("/delEvents/Name/:Name", async (req, res) => {
+    const Name = req.params.Name
+    const note = await delEventName(Name)
     res.status(201).send(note)
 })
 

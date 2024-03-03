@@ -1,6 +1,6 @@
 function DelID() {
-    function deleteFetch(X) {
-        fetch("http://localhost:3000/delEvents/" + X, {
+    function deleteIDFetch(X) {
+        fetch("http://localhost:3000/delEvents/id/" + X, {
             method: 'DELETE',
         }).then(
             response => response.json()
@@ -13,7 +13,7 @@ function DelID() {
             <h2>ID</h2>
             <label htmlFor="delID">ID of Event to be deleted: </label>
             <input type="number" id="delID" defaultValue={1}></input>
-            <button type="button" onClick={() => {deleteFetch(document.getElementById('delID').value)}}>Delete!</button>
+            <button type="button" onClick={() => {deleteIDFetch(document.getElementById('delID').value)}}>Delete!</button>
         </>
     )
 }
