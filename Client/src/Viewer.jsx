@@ -23,6 +23,7 @@ function Viewer() {
             <label htmlFor="weeksNumber">See Events for how many weeks ahead?</label>
             <input type="number" id="weeksNumber" defaultValue={2}></input>
             <button type="button" onClick={() => {getNextWeeks(document.getElementById('weeksNumber').value)}}>Submit</button>
+            <div className="isEvents">
             {(typeof weeksData === 'undefined') ? (
                 <h1>No Events Found</h1>
             ): (
@@ -30,6 +31,7 @@ function Viewer() {
                     <Event key={i} ID={obj.ID} Name={obj.Name} Day={obj.day} />
                 ))
             )}
+            </div>
         </>
     )
 }

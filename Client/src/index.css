@@ -1,4 +1,12 @@
 .Event {
     border-style: solid;
-    margin: auto;
+    width: 15%;
+    margin: 5px auto;
+    padding: 0px 10px;
+    /*outline: solid green 5px;*/
+}
+
+.isEvents {
+    width: 100%;
+    display: inline-block;
 }
