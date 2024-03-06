@@ -1,13 +1,18 @@
 .Event {
-    border-style: solid;
-    width: 15%;
+    border: 3px solid;
     margin: 5px auto;
-    padding: 0px 10px;
-    float: left;
-    /*outline: solid green 5px;*/
+    text-align: center;
+    display: inline-block;
+    width: 19%;
 }
 
 .isEvents {
-    width: 100%;
-    display: inline-block;
+    max-width: 80vw;
+    background-color: grey;
+    margin: auto;
+    text-align: center;
+}
+
+body {
+    background-color: lightgray;
 }

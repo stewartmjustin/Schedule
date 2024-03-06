@@ -1,5 +1,9 @@
 function Creator() {
     function createEvent(Name, Day) {
+        if (!Name || !Day) {
+            alert("Fields were left empty!")
+            return
+        }
         fetch("http://localhost:3000/events", {
             method: 'POST',
             headers: {
