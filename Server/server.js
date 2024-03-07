@@ -1,5 +1,5 @@
 import express from "express"
-import { getEvents, getEvent, createEvent, getWeeks, delEventID, delEventName } from "./database.js";
+import { getEvents, getEvent, createEvent, getWeeks, delEventID, delEventName, delEventDates } from "./database.js";
 import cors from 'cors'
 
 const app = express();
@@ -23,6 +23,11 @@ function getFutureDate(oldDate, Y) {
     fDate.setDate(fDate.getDate() + Y * 7)
     fDate.setDate(fDate.getDate() + (7 - fDate.getDay()))
     return fDate
+}
+
+function getOldestDate() {
+    const date = new Date(0, 1, 1)
+    return date
 }
 
 app.get("/events", async (req, res) => {
@@ -52,6 +57,13 @@ app.delete("/delEvents/id/:id", async (req, res) => {
 app.delete("/delEvents/Name/:Name", async (req, res) => {
     const Name = req.params.Name
     const note = await delEventName(Name)
+    res.status(201).send(note)
+})
+
+app.delete("/delEvents/old", async (req, res) => {
+    const day2 = getCurDate()
+    const day1 = getOldestDate()
+    const note = await delEventDates(day1, day2)
     res.status(201).send(note)
 })
 

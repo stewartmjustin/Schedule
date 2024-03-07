@@ -47,6 +47,11 @@ export async function delEventName(Name) {
   return rows
 }
 
+export async function delEventDates(day1, day2) {
+  const [rows] = await pool.query('DELETE FROM events WHERE day > (?) AND day < (?)', [day1, day2])
+  return rows
+}
+
 /*const events = await getEvents()*/
 /*const events = await getEvent(1)*/
 /*const events = await createEvent("test3")*/
