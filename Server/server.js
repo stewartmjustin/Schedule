@@ -7,13 +7,14 @@ app.use(cors())
 
 app.use(express.json())
 
-function getCurDate() {
+function getYesterdayDate() {
     const date = new Date();
+    date.setDate(date.getDate() - 1)
     return date;
 }
 
 function getSunDate() {
-    const date = getCurDate();
+    const date = new Date();
     date.setDate(date.getDate() - date.getDay())
     return date
 }
@@ -61,7 +62,7 @@ app.delete("/delEvents/Name/:Name", async (req, res) => {
 })
 
 app.delete("/delEvents/old", async (req, res) => {
-    const day2 = getCurDate()
+    const day2 = getYesterdayDate()
     const day1 = getOldestDate()
     const note = await delEventDates(day1, day2)
     res.status(201).send(note)

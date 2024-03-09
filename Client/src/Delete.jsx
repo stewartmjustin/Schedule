@@ -1,5 +1,6 @@
 import DelID from "./DelID"
 import DelName from "./DelName"
+import DelOld from "./DelOld"
 
 function Delete() {
     return (
@@ -7,6 +8,7 @@ function Delete() {
             <h1>Delete</h1>
             <DelID />
             <DelName />
+            <DelOld />
         </>
     )
 }
