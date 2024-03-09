@@ -16,3 +16,13 @@
 body {
     background-color: lightgray;
 }
+
+button.del {
+    background-color: white;
+    transition-duration: 1s;
+}
+
+button.del:hover {
+    background-color: red;
+    color: white;
+}

@@ -13,7 +13,7 @@ function DelName() {
             <h2>Name</h2>
             <label htmlFor="delName">Name of Event to be deleted: </label>
             <input type="text" id="delName"></input>
-            <button type="button" onClick={() => {deleteNameFetch(document.getElementById('delName').value)}}>Delete!</button>
+            <button className="del" type="button" onClick={() => {deleteNameFetch(document.getElementById('delName').value)}}>Delete!</button>
         </>
     )
 }

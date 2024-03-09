@@ -9,7 +9,7 @@ function DelOld() {
     return (
         <>
             <h2>Delete All Past Events?</h2>
-            <button type="button" onClick={() => {if (confirm("Delete all past Events?")) runOldDelete()}}>Delete!</button>
+            <button className="del" type="button" onClick={() => {if (confirm("Delete all past Events?")) runOldDelete()}}>Delete!</button>
         </>
     )
 }
