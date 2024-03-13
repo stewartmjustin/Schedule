@@ -22,7 +22,7 @@ function Viewer() {
             <h1>Viewer</h1>
             <label htmlFor="weeksNumber">See Events for how many weeks ahead?</label>
             <input type="number" id="weeksNumber" defaultValue={2}></input>
-            <button type="button" onClick={() => {getNextWeeks(document.getElementById('weeksNumber').value)}}>Submit</button>
+            <button type="button" className="good" onClick={() => {getNextWeeks(document.getElementById('weeksNumber').value)}}>Submit</button>
             <div className="isEvents">
             <div className="isEvents">
                 {(typeof weeksData === 'undefined') ? (

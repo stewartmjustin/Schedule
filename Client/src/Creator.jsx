@@ -24,7 +24,7 @@ function Creator() {
             <br />
             <label htmlFor="day">Enter date (YYYY-MM-DD): </label>
             <input id="day" type="date" />
-            <button type="button" onClick={() => {createEvent(document.getElementById("name").value, document.getElementById("day").value)}}>Create!</button>
+            <button type="button" className="good" onClick={() => {createEvent(document.getElementById("name").value, document.getElementById("day").value)}}>Create!</button>
         </>
     )
 }

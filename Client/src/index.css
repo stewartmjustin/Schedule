@@ -38,3 +38,12 @@ button.del:hover {
     background-color: red;
     color: white;
 }
+
+button.good {
+    background-color: white;
+    transition-duration: 0.5s;
+}
+
+button.good:hover {
+    background-color: green;
+}
