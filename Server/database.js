@@ -33,7 +33,7 @@ export async function createEvent(Name, day) {
 }
 
 export async function getWeeks(X, Y) {
-  const [rows] = await pool.query('SELECT * FROM events WHERE day < (?) AND day > (?)', [X, Y])
+  const [rows] = await pool.query('SELECT * FROM events WHERE day < (?) AND day > (?) ORDER BY day ASC', [X, Y])
   return rows
 }
 
