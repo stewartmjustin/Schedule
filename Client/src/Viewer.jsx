@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import Event from "./Event"
 
 function Viewer() {
-
     const [weeksData, setWeeks] = useState([{}])
     function getNextWeeks(X) {
         fetch("http://localhost:3000/events/weeks/" + X).then(
@@ -10,8 +9,10 @@ function Viewer() {
         ).then(
             data => {
                 setWeeks(data)
+                console.log(data)
             }
         )
+        console.log("UPDATED!")
     }
 
     useEffect(() => {
@@ -22,8 +23,8 @@ function Viewer() {
             <h1>Viewer</h1>
             <label htmlFor="weeksNumber">See Events for how many weeks ahead?</label>
             <input type="number" id="weeksNumber" defaultValue={2}></input>
-            <button type="button" className="good" onClick={() => {getNextWeeks(document.getElementById('weeksNumber').value)}}>Submit</button>
-            <div className="isEvents">
+            <button type="button" className="good" id="ViewBtn" onClick={() => {getNextWeeks(document.getElementById('weeksNumber').value)}}>Submit</button>
+            {/*</><div className="isEvents">*/}
             <div className="isEvents">
                 {(typeof weeksData === 'undefined') ? (
                     <h1>No Events Found</h1>
@@ -33,7 +34,7 @@ function Viewer() {
                     ))
                 )}
             </div>
-            </div>
+            {/*</div>*/}
         </>
     )
 }
