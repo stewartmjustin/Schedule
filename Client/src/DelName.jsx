@@ -1,12 +1,13 @@
 function DelName() {
-    function deleteNameFetch(Name) {
-        fetch("http://localhost:3000/delEvents/Name/" + Name, {
+    async function deleteNameFetch(Name) {
+        await fetch("http://localhost:3000/delEvents/Name/" + Name, {
             method: "DELETE",
         }).then(
             response => response.json()
         ).then(
             response => console.log(response)
         )
+        document.getElementById("ViewBtn").click()
     }
     return (
         <>

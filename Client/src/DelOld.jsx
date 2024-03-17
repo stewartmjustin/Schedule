@@ -1,10 +1,11 @@
 function DelOld() {
-    function runOldDelete() {
-        fetch("http://localhost:3000/delEvents/old", {method: 'DELETE', }).then(
+    async function runOldDelete() {
+        await fetch("http://localhost:3000/delEvents/old", {method: 'DELETE', }).then(
             response => response.json()
         ).then(
             response => console.log(response)
         )
+        document.getElementById("ViewBtn").click()
     }
     return (
         <>

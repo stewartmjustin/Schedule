@@ -1,12 +1,13 @@
 function DelID() {
-    function deleteIDFetch(X) {
-        fetch("http://localhost:3000/delEvents/id/" + X, {
+    async function deleteIDFetch(X) {
+        await fetch("http://localhost:3000/delEvents/id/" + X, {
             method: 'DELETE',
         }).then(
             response => response.json()
         ).then(
             response => console.log(response)
         )
+        document.getElementById("ViewBtn").click()
     }
     return (
         <>

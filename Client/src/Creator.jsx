@@ -4,7 +4,7 @@ function Creator() {
             alert("Fields were left empty!")
             return
         }
-        const response = await fetch("http://localhost:3000/events", {
+        await fetch("http://localhost:3000/events", {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
