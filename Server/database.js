@@ -42,6 +42,11 @@ export async function delEventID(ID) {
   return rows
 }
 
+export async function delEventsID(min, max) {
+  const [rows] = await pool.query('DELETE FROM events WHERE ID BETWEEN (?) AND (?)', [min, max])
+  return rows
+}
+
 export async function delEventName(Name) {
   const [rows] = await pool.query('DELETE FROM events WHERE Name=(?)', [Name])
   return rows
@@ -52,9 +57,10 @@ export async function delEventDates(day1, day2) {
   return rows
 }
 
-/*const events = await getEvents()*/
+//const events = await getEvents()
 /*const events = await getEvent(1)*/
 /*const events = await createEvent("test3")*/
 /*const events = await getWeeks('2024-03-01', '2024-02-17')*/
 /*const events = await delEventID(9)*/
-/*console.log(events)*/
+//const events = await delEventsID(24, 27)
+//console.log(events)

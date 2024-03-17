@@ -1,5 +1,5 @@
 import express from "express"
-import { getEvents, getEvent, createEvent, getWeeks, delEventID, delEventName, delEventDates } from "./database.js";
+import { getEvents, getEvent, createEvent, getWeeks, delEventID, delEventsID, delEventName, delEventDates } from "./database.js";
 import cors from 'cors'
 
 const app = express();
@@ -53,6 +53,13 @@ app.delete("/delEvents/id/:id", async (req, res) => {
     const id = req.params.id
     const note = await delEventID(id)
     res.status(201).send(note)
+})
+
+app.delete("/delEvents/min/:min/max/:max", async (req, res) => {
+    const min = req.params.min
+    const max = req.params.max
+    const note = await delEventsID(min, max)
+    res.send(note)
 })
 
 app.delete("/delEvents/Name/:Name", async (req, res) => {
