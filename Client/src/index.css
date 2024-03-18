@@ -47,3 +47,8 @@ button.good {
 button.good:hover {
     background-color: green;
 }
+
+.inline > * {
+    display: inline;
+    margin: auto;
+}
