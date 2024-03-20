@@ -10,10 +10,8 @@ function Viewer() {
         ).then(
             data => {
                 setWeeks(data)
-                console.log(data)
             }
         )
-        console.log("UPDATED!")
     }
 
     useEffect(() => {
@@ -27,9 +25,8 @@ function Viewer() {
             <label htmlFor="weeksNumber">See Events for how many weeks ahead?</label>
             <input type="number" id="weeksNumber" defaultValue={2} onChange={() => {getNextWeeks(document.getElementById('weeksNumber').value)}}></input>
             <button type="button" className="good" id="ViewBtn" onClick={() => {getNextWeeks(document.getElementById('weeksNumber').value)}}>Submit</button>
-            {/*</><div className="isEvents">*/}
             <div className="isEvents">
-                {(typeof weeksData === 'undefined') ? (
+                {(JSON.stringify(weeksData) === '[]') ? (
                     <h1>No Events Found</h1>
                 ): (
                     weeksData.map((obj, i) => (
@@ -37,7 +34,6 @@ function Viewer() {
                     ))
                 )}
             </div>
-            {/*</div>*/}
         </>
     )
 }
