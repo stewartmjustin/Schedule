@@ -5,21 +5,6 @@ import Delete from "./Delete"
 
 function App() {
 
-  const [eventData, setEvents] = useState([{}])
-
-  function getEvents() {
-    fetch("http://localhost:3000/events").then(
-      response => response.json()
-    ).then(
-      data => {
-        setEvents(data)
-      }
-    )
-  }
-
-  useEffect(() => {
-    setEvents(undefined)
-  }, [])
   return (
     <>
       <Viewer />

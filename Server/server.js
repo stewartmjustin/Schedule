@@ -88,6 +88,6 @@ app.use((err, req, res, send) => {
     res.status(500).send("something broke")
 })
 
-app.listen(3000, () => {
+app.listen(3000, "0.0.0.0", () => {
     console.log("Server running on port 3000")
 })

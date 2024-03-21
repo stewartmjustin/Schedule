@@ -19,7 +19,7 @@ function Creator() {
     }
     return (
         <>
-            <h1>creator</h1>
+            <h1>Creator</h1>
             <label htmlFor="name">Event Name: </label>
             <input id="name" type="text" />
             <br />
