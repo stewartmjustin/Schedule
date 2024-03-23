@@ -17,7 +17,7 @@ var pool = mysql.createPool({
 }).promise()
 
 export async function getEvents() {
-    const [rows] = await pool.query("SELECT * FROM events")
+    const [rows] = await pool.query("SELECT * FROM events ORDER BY day ASC")
     return rows
 }
 
@@ -33,7 +33,7 @@ export async function createEvent(Name, day) {
 }
 
 export async function getWeeks(X, Y) {
-  const [rows] = await pool.query('SELECT * FROM events WHERE day < (?) AND day > (?) ORDER BY day ASC', [X, Y])
+  const [rows] = await pool.query('SELECT * FROM events WHERE day BETWEEN (?) AND (?) ORDER BY day ASC', [Y, X])
   return rows
 }
 

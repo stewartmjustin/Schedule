@@ -36,7 +36,7 @@ function Viewer() {
                 <input type="checkbox" id="allEventsCheck" onClick={() => {setAllEvents(document.getElementById("allEventsCheck").checked);  /*void(!allEvents && getEvents())*/(allEvents) ? (getNextWeeks(2)): (getEvents())}}/>
             </div>
             {(allEvents) ? (
-                <button type="button" className="good" id="ViewBtn">Update!</button>
+                <button type="button" className="good" id="ViewBtn" onClick={() => {getEvents()}}>Update!</button>
             ): (
                 <>
                     <label htmlFor="weeksNumber">See Events for how many weeks ahead?</label>

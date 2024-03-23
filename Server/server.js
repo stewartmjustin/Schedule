@@ -13,16 +13,9 @@ function getYesterdayDate() {
     return date;
 }
 
-function getSunDate() {
-    const date = new Date();
-    date.setDate(date.getDate() - date.getDay())
-    return date
-}
-
 function getFutureDate(oldDate, Y) {
     const fDate = new Date(oldDate)
     fDate.setDate(fDate.getDate() + Y * 7)
-    fDate.setDate(fDate.getDate() + (7 - fDate.getDay()))
     return fDate
 }
 
@@ -77,8 +70,10 @@ app.delete("/delEvents/old", async (req, res) => {
 
 app.get("/events/weeks/:Y", async (req, res) => {
     const y = req.params.Y
-    const date = getSunDate()
+    const date = new Date()
     const futureDate = getFutureDate(date, y)
+    console.log(date)
+    console.log(futureDate)
     const events = await getWeeks(futureDate, date)
     res.send(events)
 })
