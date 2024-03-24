@@ -29,6 +29,10 @@ h1 {
     color: whitesmoke;
 }
 
+h3 {
+    color: whitesmoke;
+}
+
 button.del {
     background-color: white;
     transition-duration: 1s;

@@ -72,8 +72,6 @@ app.get("/events/weeks/:Y", async (req, res) => {
     const y = req.params.Y
     const date = new Date()
     const futureDate = getFutureDate(date, y)
-    console.log(date)
-    console.log(futureDate)
     const events = await getWeeks(futureDate, date)
     res.send(events)
 })
