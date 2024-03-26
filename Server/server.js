@@ -1,5 +1,5 @@
 import express from "express"
-import { getEvents, getEvent, createEvent, getWeeks, delEventID, delEventsID, delEventName, delEventDates } from "./database.js";
+import { getEvents, getEvent, createEvent, getWeeks, delEventID, delEventsID, delEventName, delEventDates, delAll } from "./database.js";
 import cors from 'cors'
 
 const app = express();
@@ -66,6 +66,11 @@ app.delete("/delEvents/old", async (req, res) => {
     const day1 = getOldestDate()
     const note = await delEventDates(day1, day2)
     res.status(201).send(note)
+})
+
+app.delete("/delEvents", async (req, res) => {
+    const note = await delAll()
+    res.send(note)
 })
 
 app.get("/events/weeks/:Y", async (req, res) => {

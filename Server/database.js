@@ -57,6 +57,11 @@ export async function delEventDates(day1, day2) {
   return rows
 }
 
+export async function delAll() {
+  const [rows] = await pool.query('DELETE FROM events')
+  return rows
+}
+
 //const events = await getEvents()
 /*const events = await getEvent(1)*/
 /*const events = await createEvent("test3")*/

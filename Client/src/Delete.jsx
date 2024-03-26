@@ -1,6 +1,7 @@
 import DelID from "./DelID"
 import DelName from "./DelName"
 import DelOld from "./DelOld"
+import DeleteAll from "./DeleteAll"
 
 function Delete() {
     return (
@@ -9,6 +10,7 @@ function Delete() {
             <DelID />
             <DelName />
             <DelOld />
+            <DeleteAll />
         </>
     )
 }
